@@ -1,0 +1,74 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 20px;
+}
+h2 {
+  color: #333;
+}
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #666;
+}
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #000000;
+}
+input[type="submit"] {
+  background-color: #e1f130;
+  color: rgb(34, 34, 34);
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #b6c50e;
+    color: rgb(34, 34, 34);
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+hr {
+  border: 1px solid #ccc;
+  margin: 20px 0;
+}
+table {
+  width: 50%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  border-style: solid;
+  padding: 20px;
+}
+th, td {
+  padding: 18px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.promedio {
+  font-weight: bold;
+}
+.aprobados {
+  color: rgb(11, 179, 11);
+  font-weight: bold;
+}
+.reprobados {
+  color: rgb(242, 86, 86);
+  font-weight: bold;
+}
+.total {
+  font-weight: bold;
+}

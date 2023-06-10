@@ -1,0 +1,17 @@
+* {
+  padding: 10px;
+  margin: 0px;
+}
+
+td {
+  background-color: rgb(231, 169, 169);
+  border-style: solid;
+}
+
+th {
+  background-color: rgb(208, 211, 208);
+  border-style: solid;
+    padding: 0px;
+}
+
+

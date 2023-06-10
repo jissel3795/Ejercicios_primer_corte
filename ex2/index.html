@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Interés de Cuenta de Ahorros</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="number"] {
+      width: 150px;
+      padding: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    #resultado {
+      margin-top: 20px;
+      border-top: 1px solid #ccc;
+      padding-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Calculadora de Interés de Cuenta de Ahorros</h1>
+
+  <p>Esta calculadora te permite calcular el interés que tendría una cuenta de ahorros a fin de año, dados los siguientes datos:</p>
+  <ul>
+    <li>Tasa de interés anual: 15% (equivalente al 1.25% mensual)</li>
+    <li>Monto inicial en enero</li>
+    <li>Ingreso mensual adicional</li>
+  </ul>
+  <p>Ingresa los datos solicitados a continuación:</p>
+
+  <label for="montoInicial">Monto inicial en enero:</label>
+  <input type="number" id="montoInicial" min="0" step="0.01">
+
+  <label for="ingresoMensual">Ingreso mensual adicional:</label>
+  <input type="number" id="ingresoMensual" min="0" step="0.01">
+
+  <button onclick="calcularInteres()">Calcular</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function calcularInteres() {
+      var montoInicial = parseFloat(document.getElementById('montoInicial').value);
+      var ingresoMensual = parseFloat(document.getElementById('ingresoMensual').value);
+      var tasaInteresAnual = 15.00; // Tasa de interés anual (15%)
+      var meses = 12; // Número de meses
+
+      // Validar que se hayan ingresado valores válidos
+      if (isNaN(montoInicial) || isNaN(ingresoMensual)) {
+        alert('Por favor ingresa valores válidos.');
+        return;
+      }
+
+      // Calcular el interés y el saldo final
+      var tasaInteresMensual = tasaInteresAnual / 100 / 12;
+      var saldo = montoInicial;
+      var totalIngresos = montoInicial;
+
+      for (var i = 1; i <= meses; i++) {
+        saldo += ingresoMensual;
+        saldo += saldo * tasaInteresMensual;
+        totalIngresos += ingresoMensual;
+      }
+
+      var interesGenerado = saldo - totalIngresos;
+
+      // Mostrar los resultados
+      var resultadoHTML = "<h2>Resultados:</h2>";
+      resultadoHTML += "<p>Saldo final: " + saldo.toFixed(2) + " bs</p>";
+      resultadoHTML += "<p>Interés generado: " + interesGenerado.toFixed(2) + " bs</p>";
+
+      document.getElementById('resultado').innerHTML = resultadoHTML;
+    }
+  </script>
+</body>
+</html>
